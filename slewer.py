@@ -47,6 +47,9 @@ def runSlew():
  			print "Waiting....";
 			time.sleep(SLEW_WAIT + CAMERA_WAIT)
 			print "CAPTURING IMAGE.";
+			## SharpCap 2.8 has a bug that throws an exception
+			## when saving frames from DirectShow devices,
+			## ignore exceptions for now.
 			try:
 				SharpCap.SelectedCamera.CaptureSingleFrameTo("%s\\%03d_%03d.png" % (SharpCap.CaptureFolder, ra, dec))
 			except:
