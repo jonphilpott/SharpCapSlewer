@@ -45,7 +45,7 @@ def runSlew():
 			print ("Slewing to: %f, %f" % (RA, DEC));
  			t.SlewToCoordinates(RA, DEC);
  			print "Waiting....";
-			time.sleep(SLEW_WAIT + CAMERA_WAIT)
+			time.sleep(CAMERA_WAIT)
 			print "CAPTURING IMAGE.";
 			## SharpCap 2.8 has a bug that throws an exception
 			## when saving frames from DirectShow devices,
